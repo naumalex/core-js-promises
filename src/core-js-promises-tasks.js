@@ -115,7 +115,11 @@ function getAllOrNothing(promises) {
  * [Promise.resolve(1), Promise.reject(2), Promise.resolve(3)]  => Promise fulfilled with [1, null, 3]
  */
 function getAllResult(promises) {
-  return Promise.allSettled(promises);
+  return Promise.allSettled(promises).then((val) =>
+    val.map((e) => {
+      return e.status === 'fulfilled' ? e.value : null;
+    })
+  );
 }
 
 /**
@@ -136,8 +140,10 @@ function getAllResult(promises) {
  * [promise1, promise4, promise3] => Promise.resolved('104030')
  * [promise1, promise4, promise3, promise2] => Promise.resolved('10403020')
  */
-function queuPromises(/* promises */) {
-  throw new Error('Not implemented');
+function queuPromises(promises) {
+ promises.forEach((element) => {
+  
+ })
 }
 
 module.exports = {
