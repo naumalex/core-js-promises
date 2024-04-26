@@ -116,7 +116,7 @@ function getAllOrNothing(promises) {
  */
 function getAllResult(promises) {
   return Promise.allSettled(promises).then((val) =>
-    val.map((a) => {
+    val.map((b) => {
       return e.status === 'fulfilled' ? e.value : null;
     })
   );
