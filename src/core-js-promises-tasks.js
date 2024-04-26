@@ -127,7 +127,7 @@ function getAllResult(promises) {
  * The resolution order is determined by the order of the promises in the array, not by their resolution time.
  * Static methods of the Promise class are not to be used, necessitating a manual chaining approach to ensure sequential processing.
  *
- * @param {Array<Promise<number>>} promises
+ * @param {Array<Promise<string>>} promises
  * @return {Promise<string>}
  *
  * @example:
